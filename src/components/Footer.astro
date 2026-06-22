@@ -1,0 +1,74 @@
+---
+---
+<footer class="footer">
+  <div class="footer-inner">
+    <p class="footer-name">Marek Mazák</p>
+    <div class="footer-links">
+      <a href="mailto:mazak.marek1@gmail.com">mazak.marek1@gmail.com</a>
+      <span class="sep">·</span>
+      <a href="tel:+421917284276">+421 917 284 276</a>
+      <span class="sep">·</span>
+      <span>Kráľovce, SR</span>
+    </div>
+    <p class="footer-note">
+      <span class="check">✓</span> CV zostavené s Astro
+    </p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: var(--dark);
+    padding: 2.5rem 2rem;
+    text-align: center;
+  }
+
+  .footer-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .footer-name {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  .footer-links {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .footer-links a,
+  .footer-links span {
+    font-size: 0.85rem;
+    color: #A8BECF;
+    text-decoration: none;
+  }
+
+  .footer-links a:hover {
+    color: var(--accent);
+  }
+
+  .sep {
+    color: #3A5068 !important;
+  }
+
+  .footer-note {
+    font-size: 0.75rem;
+    color: #3A5068;
+    margin-top: 0.5rem;
+  }
+
+  .check {
+    color: var(--accent);
+  }
+</style>

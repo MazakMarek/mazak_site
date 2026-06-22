@@ -1,0 +1,165 @@
+---
+---
+<section class="hero">
+  <div class="hero-inner">
+    <div class="terminal">
+      <div class="terminal-bar">
+        <span class="dot red"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
+        <span class="terminal-title">cv.sh</span>
+      </div>
+      <div class="terminal-body">
+        <p class="line"><span class="prompt">$</span> <span class="cmd">./run-profile</span></p>
+        <p class="line output"><span class="check">✓</span> loading <strong>Marek Mazák</strong> <span class="tag">bc.</span></p>
+        <p class="line output"><span class="check">✓</span> role: <strong>Automated Software Tester</strong></p>
+        <p class="line output"><span class="check">✓</span> location: <strong>Žilina, SR</strong></p>
+        <p class="line output"><span class="check">✓</span> status: <span class="pass">all checks passing</span> <span class="blink">▌</span></p>
+      </div>
+    </div>
+
+    <div class="hero-meta">
+      <p class="hero-tagline">
+        Testujem softvér, analyzujem dáta a zbieram trofeje z Via Ferrata — detailné myslenie sa hodí všade.
+      </p>
+      <div class="hero-links">
+        <a href="mailto:mazak.marek1@gmail.com" class="link-chip">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          mazak.marek1@gmail.com
+        </a>
+        <a href="tel:+421917284276" class="link-chip">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.5 12.32a19.79 19.79 0 0 1-3-8.59A2 2 0 0 1 3.4 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.4a16 16 0 0 0 6.29 6.29l.76-.76a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          +421 917 284 276
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    background: var(--dark);
+    padding: 4rem 2rem 3.5rem;
+  }
+
+  .hero-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  /* Terminal */
+  .terminal {
+    background: #0A1117;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 24px 64px rgba(0,0,0,0.5);
+    font-family: 'Courier New', monospace;
+    font-size: 0.875rem;
+  }
+
+  .terminal-bar {
+    background: #1C2B3A;
+    padding: 0.6rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+  }
+  .dot.red    { background: #FF5F57; }
+  .dot.yellow { background: #FEBC2E; }
+  .dot.green  { background: #28C840; }
+
+  .terminal-title {
+    margin-left: auto;
+    margin-right: auto;
+    color: #4A6274;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+  }
+
+  .terminal-body {
+    padding: 1.25rem 1.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .line {
+    color: #8BA7BE;
+    white-space: nowrap;
+  }
+  .line.output { color: #C5D8E8; }
+
+  .prompt { color: var(--accent); margin-right: 0.5rem; }
+  .cmd    { color: #FFFFFF; }
+
+  .check  { color: var(--accent); margin-right: 0.5rem; }
+  .pass   { color: var(--accent); font-weight: 600; }
+
+  .tag {
+    background: var(--accent-dim);
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    font-size: 0.7rem;
+    padding: 0 0.35rem;
+    border-radius: 3px;
+    letter-spacing: 0.05em;
+    vertical-align: middle;
+  }
+
+  .blink {
+    color: var(--accent);
+    animation: blink 1.1s step-end infinite;
+  }
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0; }
+  }
+
+  /* Right side */
+  .hero-tagline {
+    color: #A8BECF;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 1.75rem;
+    font-family: var(--font-body);
+  }
+
+  .hero-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .link-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #C5D8E8;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-family: var(--font-body);
+    transition: color 0.2s;
+  }
+  .link-chip:hover { color: var(--accent); }
+  .link-chip svg   { flex-shrink: 0; opacity: 0.6; }
+
+  @media (max-width: 680px) {
+    .hero-inner {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .terminal { font-size: 0.78rem; }
+    .terminal-body { padding: 1rem 1.1rem 1.2rem; }
+    .line { white-space: normal; }
+  }
+</style>
