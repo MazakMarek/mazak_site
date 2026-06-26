@@ -1,165 +1,469 @@
 ---
+import Nav from './Nav.astro';
+const base = import.meta.env.BASE_URL;
+import me from '../../resources/result_ME.jpg';
 ---
+<Nav />
+
 <section class="hero">
-  <div class="hero-inner">
-    <div class="terminal">
-      <div class="terminal-bar">
-        <span class="dot red"></span>
-        <span class="dot yellow"></span>
-        <span class="dot green"></span>
-        <span class="terminal-title">cv.sh</span>
+
+  <!-- ═══ LEFT: avatar + meno + stats ═══ -->
+  <div class="hero-left">
+
+    <div class="name-block">
+      <div class="avatar">
+        <img src={me.src} alt="Moja fotka" class="avatar-image" />
       </div>
-      <div class="terminal-body">
-        <p class="line"><span class="prompt">$</span> <span class="cmd">./run-profile</span></p>
-        <p class="line output"><span class="check">✓</span> loading <strong>Marek Mazák</strong> <span class="tag">bc.</span></p>
-        <p class="line output"><span class="check">✓</span> role: <strong>Automated Software Tester</strong></p>
-        <p class="line output"><span class="check">✓</span> location: <strong>Žilina, SR</strong></p>
-        <p class="line output"><span class="check">✓</span> status: <span class="pass">all checks passing</span> <span class="blink">▌</span></p>
+
+      <div class="name-text">
+        <div class="name-row">
+          <span class="n-bright">M</span><span class="n-ghost">arek</span>
+        </div>
+        <div class="name-row">
+          <span class="n-bright">M</span><span class="n-ghost">azák</span>
+        </div>
       </div>
     </div>
 
-    <div class="hero-meta">
-      <p class="hero-tagline">
-        Testujem softvér, analyzujem dáta a zbieram trofeje z Via Ferrata — detailné myslenie sa hodí všade.
-      </p>
-      <div class="hero-links">
-        <a href="mailto:mazak.marek1@gmail.com" class="link-chip">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-          mazak.marek1@gmail.com
-        </a>
-        <a href="tel:+421917284276" class="link-chip">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.5 12.32a19.79 19.79 0 0 1-3-8.59A2 2 0 0 1 3.4 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.4a16 16 0 0 0 6.29 6.29l.76-.76a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          +421 917 284 276
-        </a>
+    <div class="stats-card">
+      <div class="stats-row">
+        <div class="stat">
+          <span class="stat-num">3 +</span>
+          <span class="stat-label">Roky testovania</span>
+        </div>
+        <div class="stat-sep"></div>
+        <div class="stat">
+          <span class="stat-num">IT</span>
+          <span class="stat-label">Enthusiast</span>
+        </div>
+        <div class="stat-sep"></div>
+        <div class="stat">
+          <span class="stat-num">Bc.</span>
+          <span class="stat-label">FRI Žilina</span>
+        </div>
       </div>
+    </div>
+  </div>
+
+  <!-- ═══ RIGHT: info panel ═══ -->
+  <div class="hero-right">
+    <div class="bio-block">
+      <p class="bio-text">
+        Automatizovaný tester so záujmom o kvalitu softvéru a dátovú analytiku.
+        Pracujem systematicky, s dôrazom na opakovateľné výsledky a čistú dokumentáciu.
+        Baví ma hľadať bugy skôr, než ich nájde zákazník.
+      </p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="info-block">
+      <p class="info-label">Aktuálna pozícia</p>
+      <p class="info-title">Automated Software Tester</p>
+      <p class="info-sub">Scheidt &amp; Bachmann</p>
+      <p class="info-sub">Júl 2025 - súčasne</p>
+    </div>
+
+    <div class="info-block">
+      <p class="info-label">Nástroje</p>
+      <div class="chips">
+        <span class="chip">Robot FW</span>
+        <span class="chip">Python</span>
+        <span class="chip">SoapUI</span>
+        <span class="chip">Bruno</span>
+        <span class="chip">Postman</span>
+        <span class="chip">Java</span>
+        <span class="chip">SQL</span>
+        <span class="chip">UML</span>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <p class="info-label">Vzdelanie</p>
+
+      <p class="info-title">Ing. Loading </p>
+      <p class="info-sub">UNIZA FRI Žilina, 2024 - súčasne</p>
+      <div class="progress-bar">
+        <div class="progress-track">
+          <div class="progress-fill"></div>
+        </div>
+        <span class="progress-label">90%</span>
+      </div>
+
+      <p class="info-title">Bc. Informatika a riadenie </p>
+      <p class="info-thesis">Téma BP: Dátova analytika vo vzdelávaciom procese</p>
+      <p class="info-sub">UNIZA FRI Žilina, 2021 - 2024</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="social-row">
+      <a href="https://github.com/tvoj-github" target="_blank" rel="noopener" class="social-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+          <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+        </svg>
+        GitHub
+      </a>
+      <a href="https://linkedin.com/in/tvoj-linkedin" target="_blank" rel="noopener" class="social-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+        </svg>
+        LinkedIn
+      </a>
+    </div>
+
+    <!-- Nav karty — bez číseliek -->
+    <div class="hero-nav-cards">
+      <a href={`${base}skusenosti/`} class="nav-card">
+        Skúsenosti 
+      </a>
+      <a href={`${base}znalosti/`} class="nav-card">
+        Znalosti 
+      </a>
+      <a href={`${base}vzdelanie/`} class="nav-card">
+        Vzdelanie 
+      </a>
     </div>
   </div>
 </section>
 
+<div class="contact-bar">
+  <div class="contact-item">
+    <span class="contact-label">Email</span>
+    <a href="mailto:mazak.marek1@gmail.com" class="contact-val">mazak.marek1@gmail.com</a>
+  </div>
+  <div class="contact-item">
+    <span class="contact-label">Tel</span>
+    <a href="tel:+421917284276" class="contact-val">+421 917 284 276</a>
+  </div>
+  <div class="contact-item">
+    <span class="contact-label">Lokalita</span>
+    <span class="contact-val">Žilina, SR</span>
+  </div>
+  <div class="status-pill">
+    <span class="status-dot"></span>
+    Aktívne zamestnaný
+  </div>
+</div>
+
 <style>
   .hero {
-    background: var(--dark);
-    padding: 4rem 2rem 3.5rem;
-  }
-
-  .hero-inner {
-    max-width: 860px;
-    margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: center;
+    grid-template-columns: 52% 48%;
+    min-height: 0;          /* zruší min-height: calc(100vh...) */
+    height: calc(100vh - 49px - 57px); 
+    border-bottom: 1px solid var(--border-muted);
+    margin-top: 0;
   }
 
-  /* Terminal */
-  .terminal {
-    background: #0A1117;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 24px 64px rgba(0,0,0,0.5);
-    font-family: 'Courier New', monospace;
-    font-size: 0.875rem;
-  }
-
-  .terminal-bar {
-    background: #1C2B3A;
-    padding: 0.6rem 1rem;
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-  }
-
-  .dot {
-    width: 11px;
-    height: 11px;
-    border-radius: 50%;
-  }
-  .dot.red    { background: #FF5F57; }
-  .dot.yellow { background: #FEBC2E; }
-  .dot.green  { background: #28C840; }
-
-  .terminal-title {
-    margin-left: auto;
-    margin-right: auto;
-    color: #4A6274;
-    font-size: 0.75rem;
-    letter-spacing: 0.05em;
-  }
-
-  .terminal-body {
-    padding: 1.25rem 1.5rem 1.5rem;
+  /* ── LEFT ── */
+  .hero-left {
+    border-right: 1px solid var(--border-muted);
     display: flex;
     flex-direction: column;
-    gap: 0.4rem;
+    justify-content: space-between;
+    overflow: hidden;
   }
 
-  .line {
-    color: #8BA7BE;
+  .name-block {
+    padding: 0 2rem 0 2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.75rem;
+  }
+
+  .avatar {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    border: 2px solid var(--border);
+    background: var(--bg-elevated);
+    flex-shrink: 0;
+    overflow: hidden;
+    align-self: center;
+  }
+
+  .avatar-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .name-text {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  .name-row {
+    font-family: var(--font-display);
+    font-size: clamp(4rem, 7.5vw, 7.5rem);
+    font-weight: 800;
+    line-height: 0.92;
+    letter-spacing: -0.03em;
     white-space: nowrap;
   }
-  .line.output { color: #C5D8E8; }
+  .n-bright { color: var(--text-primary); }
+  .n-ghost  { color: var(--name-ghost); }
 
-  .prompt { color: var(--accent); margin-right: 0.5rem; }
-  .cmd    { color: #FFFFFF; }
-
-  .check  { color: var(--accent); margin-right: 0.5rem; }
-  .pass   { color: var(--accent); font-weight: 600; }
-
-  .tag {
-    background: var(--accent-dim);
-    border: 1px solid var(--accent);
-    color: var(--accent);
-    font-size: 0.7rem;
-    padding: 0 0.35rem;
-    border-radius: 3px;
-    letter-spacing: 0.05em;
-    vertical-align: middle;
+  .stats-card {
+    background: var(--bg-stats);
+    border-top: 1px solid var(--border-muted);
+    padding: 1.5rem 2rem;
   }
 
-  .blink {
-    color: var(--accent);
-    animation: blink 1.1s step-end infinite;
-  }
-  @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50%       { opacity: 0; }
+  .stats-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
   }
 
-  /* Right side */
-  .hero-tagline {
-    color: #A8BECF;
-    font-size: 1.05rem;
-    line-height: 1.7;
-    margin-bottom: 1.75rem;
-    font-family: var(--font-body);
+  .stat-sep {
+    width: 1px;
+    height: 2.5rem;
+    background: var(--border-muted);
+    flex-shrink: 0;
   }
 
-  .hero-links {
+  .stat {
     display: flex;
     flex-direction: column;
-    gap: 0.6rem;
+    align-items: center;
+    gap: 0.2rem;
+  }
+  .stat-num {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--orange);
+    line-height: 1;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .stat-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
   }
 
-  .link-chip {
+  /* ── RIGHT ── */
+  .hero-right {
+    padding: 0 2.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    justify-content: center;
+    overflow-y: auto;
+  }
+
+  .bio-text {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-weight: 400;
+  }
+
+  .divider {
+    height: 1px;
+    background: var(--border-muted);
+    flex-shrink: 0;
+  }
+
+  .info-block {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .info-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.15rem;
+  }
+
+  .info-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.3;
+  }
+
+  .info-sub {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+  }
+  .info-thesis {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    font-weight: 700;
+  }
+
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.15rem;
+  }
+  .chip {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    padding: 0.25rem 0.65rem;
+    border-radius: 4px;
+  }
+
+  .social-row {
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  .social-link {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    color: #C5D8E8;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: white;
     text-decoration: none;
-    font-size: 0.85rem;
-    font-family: var(--font-body);
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-muted);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .social-link:hover {
+    color: var(--text-primary);
+    border-color: var(--border);
+  }
+  .social-link svg { opacity: 0.6; flex-shrink: 0; }
+  .social-link:hover svg { opacity: 1; }
+
+  /* Nav karty — čistý text, bez číseliek */
+  .hero-nav-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    line-height: 25px;
+  }
+
+  .nav-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-muted);
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+    text-align: center;
+    transition: color 0.2s, border-color 0.2s, background 0.2s;
+  }
+  .nav-card:hover {
+    color: var(--text-primary);
+    border-color: var(--border);
+    background: #1C2128;
+  }
+
+  /* ── CONTACT BAR ── */
+  .contact-bar {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    padding: 0.9rem 2rem;
+    border-top: 1px solid var(--border-muted);
+    flex-wrap: wrap;
+  }
+  .contact-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+  .contact-label {
+    font-size: 0.58rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  .contact-val {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    text-decoration: none;
     transition: color 0.2s;
   }
-  .link-chip:hover { color: var(--accent); }
-  .link-chip svg   { flex-shrink: 0; opacity: 0.6; }
+  .contact-val:hover { color: var(--blue); }
 
-  @media (max-width: 680px) {
-    .hero-inner {
-      grid-template-columns: 1fr;
-      gap: 2rem;
-    }
-    .terminal { font-size: 0.78rem; }
-    .terminal-body { padding: 1rem 1.1rem 1.2rem; }
-    .line { white-space: normal; }
+  .status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    margin-left: auto;
+    background: var(--blue-dim);
+    border: 1px solid rgba(88,166,255,0.25);
+    color: var(--blue);
+    font-size: 0.78rem;
+    font-weight: 500;
+    padding: 0.35rem 0.875rem;
+    border-radius: 20px;
   }
+  .status-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--blue);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 860px) {
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-left { border-right: none; border-bottom: 1px solid var(--border-muted); }
+    .name-block { padding: 0 1.5rem 0; gap: 1.25rem; }
+    .name-row { font-size: clamp(2.5rem, 12vw, 5rem); }
+    .avatar { width: 100px; height: 100px; }
+    .hero-right { padding: 1.5rem; }
+    .bio-text { font-size: 0.95rem; }
+    .info-title { font-size: 1.05rem; }
+    .status-pill { margin-left: 0; }
+  }
+  .progress-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-top: 0.4rem;
+}
+
+.progress-track {
+  width: 200px;
+  height: 6px;
+  background: var(--border-muted);
+  border-radius: 2px;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 90%;
+  background: var(--orange);
+  border-radius: 2px;
+}
+
+.progress-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--orange);
+  letter-spacing: 0.06em;
+  flex-shrink: 0;
+}
 </style>

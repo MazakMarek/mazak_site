@@ -1,75 +1,73 @@
 ---
-const techSkills = [
-  { name: "SoapUI / REST testing", level: 85, category: "Testing" },
-  { name: "Robot Framework", level: 75, category: "Testing" },
-  { name: "Postman", level: 80, category: "Testing" },
-  { name: "Java", level: 65, category: "Dev" },
-  { name: "Python", level: 70, category: "Dev" },
-  { name: "SQL", level: 70, category: "Dev" },
-  { name: "C++", level: 50, category: "Dev" },
-  { name: "UML", level: 60, category: "Design" },
+const skills = [
+  { name: "SoapUI", level: 85 },
+  { name: "Postman", level: 80 },
+  { name: "Robot Framework", level: 75 },
+  { name: "Python", level: 70 },
+  { name: "SQL", level: 70 },
+  { name: "Java", level: 65 },
+  { name: "C++", level: 50 },
+  { name: "UML", level: 60 },
 ];
 
-const languages = [
-  { name: "Slovenčina", level: "Rodný jazyk", code: "SK" },
-  { name: "Angličtina", level: "Pokročilý (C1)", code: "EN" },
+const interests = [
+  "🧗 Lezenie & ferraty",
+  "🥾 Turistika",
+  "🏃 Beh & fitness",
+  "🎾 Tenis",
+  "🚒 Hasičský šport",
+  "📚 Čítanie",
 ];
 ---
 
-<section class="section">
+<section class="section" id="znalosti">
   <div class="section-inner">
-    <h2 class="section-title">
-      <span class="title-label">Znalosti & nástroje</span>
-    </h2>
+    <div class="section-head">
+      <p class="section-label">02</p>
+      <h2 class="section-title">Znalosti</h2>
+    </div>
 
-    <div class="skills-grid">
-      <div class="skills-col">
-        <p class="col-label">Tech stack</p>
+    <div class="content-grid">
+      <div>
+        <p class="col-label">Technológie & nástroje</p>
         <div class="skill-list">
-          {techSkills.map((skill) => (
+          {skills.map((s) => (
             <div class="skill-row">
-              <div class="skill-name-row">
-                <span class="skill-name">{skill.name}</span>
-                <span class="skill-tag">{skill.category}</span>
+              <div class="skill-meta">
+                <span class="skill-name">{s.name}</span>
+                <span class="skill-pct">{s.level}%</span>
               </div>
-              <div class="skill-bar-track">
-                <div
-                  class="skill-bar-fill"
-                  style={`width: ${skill.level}%`}
-                  data-level={skill.level}
-                ></div>
-                <span class="skill-pct">{skill.level}%</span>
+              <div class="bar-track">
+                <div class="bar-fill" style={`width: ${s.level}%`}></div>
               </div>
             </div>
           ))}
         </div>
       </div>
 
-      <div class="skills-col">
+      <div>
         <p class="col-label">Jazyky</p>
         <div class="lang-list">
-          {languages.map((lang) => (
-            <div class="lang-card">
-              <span class="lang-code">{lang.code}</span>
-              <div>
-                <p class="lang-name">{lang.name}</p>
-                <p class="lang-level">{lang.level}</p>
-              </div>
+          <div class="lang-item">
+            <span class="lang-code">SK</span>
+            <div>
+              <p class="lang-name">Slovenčina</p>
+              <p class="lang-level">Rodný jazyk</p>
             </div>
-          ))}
+          </div>
+          <div class="lang-item">
+            <span class="lang-code">EN</span>
+            <div>
+              <p class="lang-name">Angličtina</p>
+              <p class="lang-level">C1 — pokročilý</p>
+            </div>
+          </div>
         </div>
 
         <p class="col-label" style="margin-top: 2rem;">Záujmy</p>
-        <div class="interests">
-          {[
-            "🧗 Lezenie & ferraty",
-            "🥾 Turistika",
-            "🏃 Beh & fitness",
-            "🎾 Tenis",
-            "🚒 Hasičský šport",
-            "📚 Čítanie",
-          ].map((interest) => (
-            <span class="interest-chip">{interest}</span>
+        <div class="interest-list">
+          {interests.map((i) => (
+            <span class="interest">{i}</span>
           ))}
         </div>
       </div>
@@ -79,179 +77,107 @@ const languages = [
 
 <style>
   .section {
-    padding: 4rem 2rem;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid var(--border-muted);
+    padding: 3.5rem 2.5rem;
   }
+  .section-inner { max-width: 860px; }
 
-  .section-inner {
-    max-width: 860px;
-    margin: 0 auto;
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-muted);
   }
-
+  .section-label {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--text-muted);
+  }
   .section-title {
     font-family: var(--font-display);
-    font-size: 1.5rem;
+    font-size: 1.35rem;
     font-weight: 700;
-    color: var(--dark);
-    margin-bottom: 2.5rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+    color: var(--text-primary);
   }
 
-  .section-title::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--border);
-  }
-
-  .title-label {
-    white-space: nowrap;
-  }
-
-  .skills-grid {
+  .content-grid {
     display: grid;
-    grid-template-columns: 1.3fr 1fr;
+    grid-template-columns: 1.2fr 1fr;
     gap: 3.5rem;
   }
 
   .col-label {
-    font-size: 0.72rem;
+    font-size: 0.62rem;
     font-weight: 600;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--muted);
+    color: var(--text-muted);
     margin-bottom: 1.1rem;
   }
 
-  /* Tech skill bars */
-  .skill-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0.9rem;
-  }
+  .skill-list { display: flex; flex-direction: column; gap: 0.85rem; }
 
-  .skill-name-row {
+  .skill-row {}
+  .skill-meta {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
     margin-bottom: 0.3rem;
   }
+  .skill-name { font-size: 0.82rem; color: var(--text-secondary); font-weight: 400; }
+  .skill-pct  { font-size: 0.72rem; color: var(--text-muted); }
 
-  .skill-name {
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: var(--dark);
+  .bar-track {
+    height: 3px;
+    background: var(--border-muted);
+    border-radius: 2px;
   }
-
-  .skill-tag {
-    font-size: 0.68rem;
-    font-weight: 500;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--muted);
+  .bar-fill {
+    height: 100%;
+    background: var(--orange);
+    border-radius: 2px;
     opacity: 0.7;
   }
 
-  .skill-bar-track {
-    height: 5px;
-    background: var(--border);
-    border-radius: 10px;
-    position: relative;
-    overflow: visible;
-  }
-
-  .skill-bar-fill {
-    height: 100%;
-    background: var(--accent);
-    border-radius: 10px;
-    position: relative;
-    transition: width 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-
-  .skill-pct {
-    position: absolute;
-    right: 0;
-    top: -18px;
-    font-size: 0.68rem;
-    color: var(--muted);
-    opacity: 0;
-    transition: opacity 0.2s;
-    pointer-events: none;
-  }
-
-  .skill-row:hover .skill-pct {
-    opacity: 1;
-  }
-
-  /* Languages */
-  .lang-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-
-  .lang-card {
+  .lang-list { display: flex; flex-direction: column; gap: 0.6rem; }
+  .lang-item {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 0.75rem 1rem;
+    gap: 0.875rem;
+    padding: 0.75rem;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-muted);
+    border-radius: 6px;
   }
-
   .lang-code {
     font-family: var(--font-display);
-    font-size: 0.8rem;
+    font-size: 0.72rem;
     font-weight: 700;
-    background: var(--dark);
-    color: #fff;
-    padding: 0.2rem 0.45rem;
+    background: var(--border-muted);
+    color: var(--text-secondary);
+    padding: 0.15rem 0.4rem;
     border-radius: 4px;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.06em;
     flex-shrink: 0;
   }
+  .lang-name  { font-size: 0.82rem; font-weight: 500; color: var(--text-primary); }
+  .lang-level { font-size: 0.72rem; color: var(--text-muted); margin-top: 0.1rem; }
 
-  .lang-name {
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--dark);
-  }
-
-  .lang-level {
-    font-size: 0.78rem;
-    color: var(--muted);
-    margin-top: 0.1rem;
-  }
-
-  /* Interests */
-  .interests {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-
-  .interest-chip {
-    background: var(--bg);
-    border: 1px solid var(--border);
-    color: var(--dark-mid);
-    font-size: 0.82rem;
-    padding: 0.3rem 0.75rem;
+  .interest-list { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .interest {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-muted);
+    padding: 0.25rem 0.65rem;
     border-radius: 20px;
-    transition: border-color 0.2s, background 0.2s;
+    transition: border-color 0.2s;
   }
-
-  .interest-chip:hover {
-    border-color: var(--accent);
-    background: var(--accent-dim);
-  }
+  .interest:hover { border-color: var(--border); }
 
   @media (max-width: 640px) {
-    .skills-grid {
-      grid-template-columns: 1fr;
-      gap: 2.5rem;
-    }
+    .content-grid { grid-template-columns: 1fr; gap: 2.5rem; }
   }
 </style>

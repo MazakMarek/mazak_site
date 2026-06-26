@@ -1,7 +1,7 @@
 ---
 const education = [
   {
-    degree: "Inžinierské štúdium (MSc.)",
+    degree: "Inžinierské štúdium — MSc.",
     field: "Informačný manažment",
     school: "Žilinská univerzita — FRI",
     period: "2024 – súčasnosť",
@@ -9,7 +9,7 @@ const education = [
     note: "1. ročník",
   },
   {
-    degree: "Bakalárske štúdium (Bc.)",
+    degree: "Bakalárske štúdium — Bc.",
     field: "Informatika a riadenie",
     school: "Žilinská univerzita — FRI",
     period: "2021 – 2024",
@@ -17,8 +17,8 @@ const education = [
     note: "Téma práce: Dátová analytika vo vzdelávacom procese",
   },
   {
-    degree: "Stredná škola",
-    field: "Gymnázium Šrobárova 1",
+    degree: "Gymnázium Šrobárova 1",
+    field: null,
     school: "Košice, SR",
     period: "2017 – 2021",
     current: false,
@@ -28,63 +28,59 @@ const education = [
 
 const extras = [
   {
-    icon: "🌍",
     title: "Erasmus Blended Intensive Programme",
-    desc: "Medzinárodné tímy, digitálne zručnosti a agilná spolupráca",
+    desc: "Medzinárodné tímy, digitálne zručnosti, agilná spolupráca",
   },
   {
-    icon: "💻",
     title: "Hackathon — Digitálna infraštruktúra Kysúc",
-    desc: "Návrh webovej platformy na správu miestnych zdrojov a digitalizáciu služieb",
+    desc: "Návrh webovej platformy na správu miestnych zdrojov",
   },
   {
-    icon: "📡",
     title: "Rádio X — PR tím",
     desc: "Komunikácia so sponzormi, koordinácia eventov",
   },
   {
-    icon: "🎓",
-    title: "FRI Club — člen organizačného tímu",
-    desc: "Príprava podujatí pre študentov Fakulty riadenia a informatiky",
+    title: "FRI Club — organizačný tím",
+    desc: "Príprava podujatí pre študentov fakulty",
   },
 ];
 ---
 
-<section class="section">
+<section class="section" id="vzdelanie">
   <div class="section-inner">
-    <h2 class="section-title">
-      <span class="title-label">Vzdelanie</span>
-    </h2>
+    <div class="section-head">
+      <p class="section-label">03</p>
+      <h2 class="section-title">Vzdelanie</h2>
+    </div>
 
     <div class="edu-list">
-      {education.map((edu) => (
-        <div class={`edu-card ${edu.current ? 'edu-card--current' : ''}`}>
-          <div class="edu-left">
-            <p class="edu-period">{edu.period}</p>
-            {edu.current && <span class="badge-current">aktívne</span>}
+      {education.map((e) => (
+        <div class={`edu-row ${e.current ? "edu-row--current" : ""}`}>
+          <div class="edu-period">
+            <span class={`edu-dot ${e.current ? "edu-dot--current" : ""}`}></span>
+            <span>{e.period}</span>
+            {e.current && <span class="edu-badge">Prebieha</span>}
           </div>
-          <div class="edu-right">
-            <h3 class="edu-degree">{edu.degree}</h3>
-            <p class="edu-field">{edu.field}</p>
-            <p class="edu-school">{edu.school}</p>
-            {edu.note && <p class="edu-note">{edu.note}</p>}
+          <div class="edu-body">
+            <p class="edu-degree">{e.degree}</p>
+            {e.field && <p class="edu-field">{e.field}</p>}
+            <p class="edu-school">{e.school}</p>
+            {e.note && <p class="edu-note">{e.note}</p>}
           </div>
         </div>
       ))}
     </div>
 
-    <h2 class="section-title" style="margin-top: 3.5rem;">
-      <span class="title-label">Aktivity & projekty</span>
-    </h2>
+    <div class="section-head" style="margin-top: 3rem;">
+      <p class="section-label">04</p>
+      <h2 class="section-title">Aktivity & projekty</h2>
+    </div>
 
     <div class="extras-grid">
       {extras.map((item) => (
         <div class="extra-card">
-          <span class="extra-icon">{item.icon}</span>
-          <div>
-            <p class="extra-title">{item.title}</p>
-            <p class="extra-desc">{item.desc}</p>
-          </div>
+          <p class="extra-title">{item.title}</p>
+          <p class="extra-desc">{item.desc}</p>
         </div>
       ))}
     </div>
@@ -93,171 +89,140 @@ const extras = [
 
 <style>
   .section {
-    padding: 4rem 2rem;
-    border-bottom: 1px solid var(--border);
+    padding: 3.5rem 2.5rem 4rem;
   }
+  .section-inner { max-width: 860px; }
 
-  .section-inner {
-    max-width: 860px;
-    margin: 0 auto;
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-muted);
   }
-
+  .section-label {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--text-muted);
+  }
   .section-title {
     font-family: var(--font-display);
-    font-size: 1.5rem;
+    font-size: 1.35rem;
     font-weight: 700;
-    color: var(--dark);
-    margin-bottom: 2.5rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+    color: var(--text-primary);
   }
 
-  .section-title::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--border);
-  }
+  /* Education rows */
+  .edu-list { display: flex; flex-direction: column; }
 
-  .title-label {
-    white-space: nowrap;
-  }
-
-  /* Education */
-  .edu-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .edu-card {
+  .edu-row {
     display: grid;
-    grid-template-columns: 160px 1fr;
+    grid-template-columns: 200px 1fr;
     gap: 1.5rem;
-    padding: 1.25rem 1.5rem;
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 10px;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--border-muted);
     align-items: start;
-    transition: border-color 0.2s;
   }
+  .edu-row:last-child { border-bottom: none; }
 
-  .edu-card--current {
-    border-color: var(--accent);
-    background: #f7fefb;
-  }
-
-  .edu-card:hover {
-    border-color: var(--accent);
-  }
-
-  .edu-left {
+  .edu-period {
     display: flex;
     flex-direction: column;
     gap: 0.4rem;
-    align-items: flex-start;
-    padding-top: 0.15rem;
+    padding-top: 0.1rem;
+    font-size: 0.72rem;
+    color: var(--text-muted);
   }
-
-  .edu-period {
-    font-size: 0.8rem;
+  .edu-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--border);
+    display: block;
+  }
+  .edu-dot--current {
+    background: var(--orange);
+    box-shadow: 0 0 8px rgba(240,136,62,0.35);
+  }
+  .edu-badge {
+    font-size: 0.62rem;
     font-weight: 600;
-    color: var(--muted);
-    font-family: var(--font-display);
+    letter-spacing: 0.06em;
+    color: var(--orange);
+    background: rgba(240,136,62,0.1);
+    border: 1px solid rgba(240,136,62,0.2);
+    padding: 0.15rem 0.45rem;
+    border-radius: 4px;
+    align-self: flex-start;
   }
 
-  .badge-current {
-    background: var(--accent-dim);
-    border: 1px solid var(--accent);
-    color: var(--accent);
-    font-size: 0.68rem;
-    font-weight: 600;
-    letter-spacing: 0.07em;
-    text-transform: uppercase;
-    padding: 0.15rem 0.5rem;
-    border-radius: 20px;
-  }
-
+  .edu-body {}
   .edu-degree {
-    font-family: var(--font-display);
-    font-size: 1rem;
-    font-weight: 700;
-    color: var(--dark);
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.2rem;
+  }
+  .edu-field {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-secondary);
     margin-bottom: 0.15rem;
   }
-
-  .edu-field {
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--dark-mid);
-    margin-bottom: 0.1rem;
-  }
-
   .edu-school {
-    font-size: 0.82rem;
-    color: var(--muted);
-    margin-bottom: 0.4rem;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-bottom: 0.35rem;
   }
-
   .edu-note {
-    font-size: 0.82rem;
-    color: var(--muted);
-    font-style: italic;
-    background: var(--bg);
-    padding: 0.3rem 0.6rem;
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-muted);
+    padding: 0.25rem 0.6rem;
     border-radius: 4px;
     display: inline-block;
   }
 
-  /* Extras */
+  /* Extras grid */
   .extras-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+    gap: 0;
+    border: 1px solid var(--border-muted);
+    border-radius: 6px;
+    overflow: hidden;
   }
 
   .extra-card {
-    display: flex;
-    gap: 0.85rem;
-    padding: 1rem 1.1rem;
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    transition: border-color 0.2s;
+    padding: 1.1rem 1.25rem;
+    border-right: 1px solid var(--border-muted);
+    border-bottom: 1px solid var(--border-muted);
+    transition: background 0.15s;
   }
-
-  .extra-card:hover {
-    border-color: var(--accent);
-  }
-
-  .extra-icon {
-    font-size: 1.3rem;
-    flex-shrink: 0;
-    line-height: 1;
-    margin-top: 0.1rem;
-  }
+  .extra-card:hover { background: var(--bg-elevated); }
+  .extra-card:nth-child(even) { border-right: none; }
+  .extra-card:nth-last-child(-n+2) { border-bottom: none; }
 
   .extra-title {
-    font-size: 0.875rem;
+    font-size: 0.8rem;
     font-weight: 600;
-    color: var(--dark);
+    color: var(--text-primary);
     margin-bottom: 0.2rem;
   }
-
   .extra-desc {
-    font-size: 0.8rem;
-    color: var(--muted);
-    line-height: 1.4;
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    line-height: 1.45;
   }
 
   @media (max-width: 640px) {
-    .edu-card {
-      grid-template-columns: 1fr;
-      gap: 0.75rem;
-    }
-    .extras-grid {
-      grid-template-columns: 1fr;
-    }
+    .edu-row { grid-template-columns: 1fr; gap: 0.6rem; }
+    .edu-period { flex-direction: row; align-items: center; flex-wrap: wrap; }
+    .extras-grid { grid-template-columns: 1fr; }
+    .extra-card:nth-child(even) { border-right: 1px solid var(--border-muted); }
+    .extra-card:nth-last-child(-n+2) { border-bottom: 1px solid var(--border-muted); }
+    .extra-card:last-child { border-bottom: none; }
   }
 </style>

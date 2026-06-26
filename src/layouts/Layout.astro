@@ -3,7 +3,7 @@ interface Props {
   title: string;
   description?: string;
 }
-const { title, description = "Software Tester & Data Enthusiast" } = Astro.props;
+const { title, description = "Automated Software Tester · Scheidt & Bachmann" } = Astro.props;
 ---
 <!doctype html>
 <html lang="sk">
@@ -16,7 +16,7 @@ const { title, description = "Software Tester & Data Enthusiast" } = Astro.props
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -26,40 +26,40 @@ const { title, description = "Software Tester & Data Enthusiast" } = Astro.props
 </html>
 
 <style is:global>
-  *, *::before, *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --bg: #F5F7FA;
-    --bg-card: #FFFFFF;
-    --dark: #0F1923;
-    --dark-mid: #1E2D3D;
-    --accent: #0DBF8A;
-    --accent-dim: #0DBF8A22;
-    --red: #FF5533;
-    --muted: #6B7C93;
-    --border: #DDE3EA;
-    --font-display: 'Space Grotesk', sans-serif;
-    --font-body: 'Inter', sans-serif;
+    --bg:            #0D1117;
+    --bg-elevated:   #161B22;
+    --bg-inset:      #010409;
+    --bg-stats:      #131920;
+    --border:        #30363D;
+    --border-muted:  #21262D;
+    --text-primary:  #E6EDF3;
+    --text-secondary:#8B949E;
+    --text-muted:    #484F58;
+    --name-ghost:    #1C222B;
+    --orange:        #F0883E;
+    --blue:          #58A6FF;
+    --blue-dim:      #1F3A5F;
+    --green:         #3FB950;
+    --font-display:  'Syne', sans-serif;
+    --font-body:     'Inter', sans-serif;
   }
 
-  html {
-    scroll-behavior: smooth;
-  }
+  html { scroll-behavior: smooth; }
 
   body {
-    font-family: var(--font-body);
     background: var(--bg);
-    color: var(--dark);
+    color: var(--text-primary);
+    font-family: var(--font-body);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
   }
 
   @media print {
-    body { background: white; }
+    body { background: white; color: black; }
     .no-print { display: none; }
   }
 </style>
