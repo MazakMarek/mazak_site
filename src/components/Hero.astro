@@ -6,8 +6,6 @@ import me from '../../resources/result_ME.jpg';
 <Nav />
 
 <section class="hero">
-
-  <!-- ═══ LEFT: avatar + meno + stats ═══ -->
   <div class="hero-left">
 
     <div class="name-block">
@@ -45,13 +43,12 @@ import me from '../../resources/result_ME.jpg';
     </div>
   </div>
 
-  <!-- ═══ RIGHT: info panel ═══ -->
   <div class="hero-right">
     <div class="bio-block">
       <p class="bio-text">
-        Automatizovaný tester so záujmom o kvalitu softvéru a dátovú analytiku.
-        Pracujem systematicky, s dôrazom na opakovateľné výsledky a čistú dokumentáciu.
-        Baví ma hľadať bugy skôr, než ich nájde zákazník.
+        Som softvérový tester so zameraním na kvalitu a spoľahlivosť aplikácií.
+        Popri testovaní ma zaujíma aj dátová analytika a práca s dátami.
+        Rád sa učím nové technológie a získané poznatky využívam v praxi.
       </p>
     </div>
 
@@ -67,16 +64,21 @@ import me from '../../resources/result_ME.jpg';
     <div class="info-block">
       <p class="info-label">Nástroje</p>
       <div class="chips">
-        <span class="chip">Robot FW</span>
         <span class="chip">Python</span>
+        <span class="chip">SQL</span>
+        <span class="chip">Java</span>
+        <span class="chip">Robot Framework</span>
+        <span class="chip">REST API</span>
         <span class="chip">SoapUI</span>
         <span class="chip">Bruno</span>
-        <span class="chip">Postman</span>
-        <span class="chip">Java</span>
-        <span class="chip">SQL</span>
+      </div>
+      <div class="chips">
+        <span class="chip">Git</span>
+        <span class="chip">Linux (basic)</span>
         <span class="chip">UML</span>
         <span class="chip">Azure DevOps</span>
         <span class="chip">Jira</span>
+        <span class="chip">Confluence</span>
       </div>
     </div>
 
@@ -114,7 +116,9 @@ import me from '../../resources/result_ME.jpg';
       </a>
     </div>
 
-    <!-- Nav karty — bez číseliek -->
+    <!-- Nav karty — bez číseliek 
+    Komentar na navigaciu na ostatne stranky
+    TODO
     <div class="hero-nav-cards">
       <a href={`${base}skusenosti/`} class="nav-card">
         Skúsenosti 
@@ -125,7 +129,7 @@ import me from '../../resources/result_ME.jpg';
       <a href={`${base}vzdelanie/`} class="nav-card">
         Vzdelanie 
       </a>
-    </div>
+    </div> -->
   </div>
 </section>
 
@@ -152,8 +156,8 @@ import me from '../../resources/result_ME.jpg';
   .hero {
     display: grid;
     grid-template-columns: 52% 48%;
-    min-height: 0;          /* zruší min-height: calc(100vh...) */
-    height: calc(100vh - 49px - 57px); 
+    min-height: 0;
+    height: calc(100vh - 72px - 57px); 
     border-bottom: 1px solid var(--border-muted);
     margin-top: 0;
   }
@@ -328,7 +332,7 @@ import me from '../../resources/result_ME.jpg';
   .social-row {
     display: flex;
     gap: 0.75rem;
-    margin-top: auto;
+    <!-- margin-top: auto; -->
   }
 
   .social-link {
