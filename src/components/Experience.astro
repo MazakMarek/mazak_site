@@ -1,103 +1,152 @@
----
-const jobs = [
-  {
-    title: "Automated Software Tester",
-    company: "Scheidt & Bachmann",
-    location: "Žilina, SR",
-    period: "Júl 2025 – súčasnosť",
-    current: true,
-    items: [
-      "Návrh a implementácia automatizovaných testovacích skriptov",
-      "Analýza a validácia datasetov pre projekty strojového učenia",
-      
-    ],
-  },
-  {
-    title: "Software Tester",
-    company: "Gratex IQ, a.s.",
-    location: "Žilina, SR",
-    period: "Október 2023 – Jún 2025",
-    current: false,
-    items: [
-      "Manuálne aj automatizované testovanie (SoapUI, Robot Framework)",
-      "Príprava UAT testov, testovacích scenárov a overovanie požiadaviek",
-      "Spolupráca s vývojármi pri lokalizácii a odstraňovaní chýb",
-    ],
-  },
-  {
-    title: "Fakultná prax — kontrola dát pre ML",
-    company: "FRI / Scheidt & Bachmann",
-    location: "Žilina, SR",
-    period: "November 2024 – Január 2025",
-    current: false,
-    items: ["Analýza a kontrola datasetov pre projekty strojového učenia"],
-  },
-  {
-    title: "Pomocný pracovník / Pokladňa",
-    company: "Hornbach – Baumarkt SK",
-    location: "Košice, SR",
-    period: "November 2018 – December 2023",
-    current: false,
-    items: ["Obsluha zákazníkov a práca za pokladňou"],
-  },
-];
----
+<div class="page">
 
-<section class="section" id="skusenosti">
-  <div class="section-inner">
+  <!-- LEFT: Pracovné skúsenosti -->
+  <div class="col col-left">
     <div class="section-head">
-      <p class="section-label">01</p>
       <h2 class="section-title">Pracovné skúsenosti</h2>
     </div>
 
     <div class="jobs">
-      {jobs.map((job) => (
-        <div class={`job ${job.current ? "job--current" : ""}`}>
+
+      <div class="job job--current">
+        <div class="job-left">
+          <span class="job-dot job-dot--current"></span>
+          <span class="job-period">Júl 2025 – súčasnosť</span>
+        </div>
+        <div class="job-right">
+          <div class="job-header">
+            <div>
+              <h3 class="job-title">Automated Software Tester</h3>
+              <p class="job-company">Scheidt & Bachmann <span>· Žilina, SR</span></p>
+            </div>
+            <span class="job-badge">Aktuálne</span>
+          </div>
+          <ul class="job-items">
+            <li>Návrh a realizácia manuálnych a automatizovaných testovacích prípadov pre softvérové systémy.</li>
+            <li>Vývoj automatizovaných testovacích skriptov s využitím nástrojov ako Robot Framework a Python.</li>
+            <li>Analýza a reprodukcia softvérových chýb a spolupráca s vývojármi pri ich riešení.</li>
+            <li>Testovanie RESTful API a systémových integrácií na overenie funkčnosti.</li>
+            <li>Účasť na vývojovom procese podľa metodiky Agile/Scrum a spolupráca naprieč tímami.</li>
+          </ul>
+          <div class="job-tools">
+            <span class="tool-tag">Python</span>
+            <span class="tool-tag">Robot Framework</span>
+            <span class="tool-tag">Bruno</span>
+            <span class="tool-tag">UML</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="job-left">
+          <span class="job-dot"></span>
+          <span class="job-period">November 2023 – Jún 2025</span>
+        </div>
+        <div class="job-right">
+          <div class="job-header">
+            <div>
+              <h3 class="job-title">Manual Software Tester</h3>
+              <p class="job-company">Gratex IQ, a.s. <span>· Žilina, SR</span></p>
+            </div>
+          </div>
+          <ul class="job-items">
+            <li>Vykonávanie manuálnych a automatizovaných testov s cieľom identifikovať chyby a overiť funkčnosť softvérových aplikácií.</li>
+            <li>Príprava UAT testov, testovacích scenárov a overovanie, či produkt spĺňa stanovené požiadavky.</li>
+            <li>Spolupráca s vývojármi pri hľadaní a odstraňovaní chýb s cieľom zlepšiť kvalitu softvéru.</li>
+          </ul>
+          <div class="job-tools">
+            <span class="tool-tag">AzureDev</span>
+            <span class="tool-tag">SoapUI</span>
+            <span class="tool-tag">UML</span>
+            <span class="tool-tag">SQL</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT: Hackathony + Úspechy -->
+  <div class="col col-right">
+
+    <div class="right-block">
+      <div class="section-head">
+        <h2 class="section-title">Hackathony</h2>
+      </div>
+      <div class="jobs">
+        <div class="job">
           <div class="job-left">
-            <span class={`job-dot ${job.current ? "job-dot--current" : ""}`}></span>
-            <span class="job-period">{job.period}</span>
+            <span class="job-dot"></span>
+            <span class="job-period">2025</span>
           </div>
           <div class="job-right">
             <div class="job-header">
               <div>
-                <h3 class="job-title">{job.title}</h3>
-                <p class="job-company">{job.company} <span>· {job.location}</span></p>
+                <h3 class="job-title">Hacknime.to</h3>
+                <p class="job-company">Digitálna infraštruktúra v mikroregióne Kysuce</p>
               </div>
-              {job.current && <span class="job-badge">Aktuálne</span>}
             </div>
-            {job.items.length > 0 && (
-              <ul class="job-items">
-                {job.items.map((item) => <li>{item}</li>)}
-              </ul>
-            )}
+            <ul class="job-items">
+              <li>Leader tímu</li>
+              <li>Developer</li>
+              <li>Analytik</li>
+              <li>Finálne prezentovanie pred porotou, publikom a kamerami</li>
+            </ul>
           </div>
         </div>
-      ))}
+      </div>
     </div>
+
+    <div class="right-block">
+      <div class="section-head">
+        <h2 class="section-title">Významné úspechy</h2>
+      </div>
+      <ul class="achievements">
+        <li class="achievement-item">
+          <span class="achievement-marker">★</span>
+          <span>Migrácia z lokálneho testovania do AWS cloud</span>
+        </li>
+      </ul>
+    </div>
+
   </div>
-</section>
+</div>
 
 <style>
-  .section {
-    border-bottom: 1px solid var(--border-muted);
-    padding: 3.5rem 2.5rem;
+  /* ── Two-column no-scroll layout ──62 52,,, 79 57 */
+  .page {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    height: calc(100vh - 79px - 57px - 10px); 
+    overflow: hidden;
   }
-  .section-inner { max-width: 860px; }
 
+  .col-left {
+    border-right: 1px solid var(--border-muted);
+    padding: 2.5rem;
+    overflow-y: hidden;
+    box-sizing: border-box;
+  }
+
+  .col-right {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+
+  .right-block {
+    padding: 2.5rem;
+    border-bottom: none;
+  }
+  .right-block:last-child { border-bottom: none; }
+
+  /* ── Section headers ── */
   .section-head {
     display: flex;
     align-items: baseline;
     gap: 1rem;
-    margin-bottom: 2.5rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid var(--border-muted);
-  }
-  .section-label {
-    font-size: 0.65rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    color: var(--text-muted);
-    font-family: var(--font-body);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: none;
   }
   .section-title {
     font-family: var(--font-display);
@@ -106,22 +155,25 @@ const jobs = [
     color: var(--text-primary);
   }
 
-  .jobs { display: flex; flex-direction: column; gap: 0; }
+  /* ── Jobs ── */
+  .jobs { display: flex; flex-direction: column; }
 
   .job {
     display: grid;
-    grid-template-columns: 220px 1fr;
-    gap: 1.5rem;
-    padding: 1.5rem 0;
-    border-bottom: 1px solid var(--border-muted);
+    gap: 0.25rem;
+    padding: 1.25rem 0;
+    border-bottom: none;
     align-items: start;
   }
   .job:last-child { border-bottom: none; }
 
+  .col-left .job  { grid-template-columns: 155px 1fr; }
+  .col-right .job { grid-template-columns: 48px 1fr; }
+
   .job-left {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.45rem;
     padding-top: 0.15rem;
   }
   .job-dot {
@@ -145,22 +197,22 @@ const jobs = [
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.5rem;
   }
   .job-title {
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     font-weight: 600;
     color: var(--text-primary);
     margin-bottom: 0.2rem;
   }
   .job-company {
-    font-size: 0.78rem;
+    font-size: 0.75rem;
     color: var(--text-secondary);
   }
   .job-company span { color: var(--text-muted); }
 
   .job-badge {
-    font-size: 0.65rem;
+    font-size: 0.62rem;
     font-weight: 600;
     letter-spacing: 0.06em;
     color: var(--orange);
@@ -176,10 +228,10 @@ const jobs = [
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 0.3rem;
+    gap: 0.28rem;
   }
   .job-items li {
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     color: var(--text-secondary);
     padding-left: 0.875rem;
     position: relative;
@@ -192,8 +244,64 @@ const jobs = [
     color: var(--text-muted);
   }
 
-  @media (max-width: 640px) {
-    .job { grid-template-columns: 1fr; gap: 0.75rem; }
+  /* ── Tool tags ── */
+  .job-tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-top: 0.65rem;
+  }
+  .tool-tag {
+    font-size: 0.63rem;
+    font-weight: 500;
+    color: var(--blue);
+    background: var(--blue-dim);
+    border: 1px solid rgba(88, 166, 255, 0.2);
+    padding: 0.13rem 0.45rem;
+    border-radius: 4px;
+    letter-spacing: 0.03em;
+  }
+
+  /* ── Achievements ── */
+  .achievements {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .achievement-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    padding: 0.75rem 1rem;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-muted);
+    border-left: 2px solid var(--orange);
+    border-radius: 6px;
+  }
+  .achievement-marker {
+    color: var(--orange);
+    font-size: 0.7rem;
+    flex-shrink: 0;
+  }
+
+  /* ── Mobile ── */
+  @media (max-width: 768px) {
+    .page {
+      grid-template-columns: 1fr;
+      height: auto;
+      overflow: visible;
+    }
+    .col-left {
+      border-right: none;
+      border-bottom: none;
+      overflow-y: visible;
+    }
+    .col-right { overflow-y: visible; }
+    .col-left .job,
+    .col-right .job { grid-template-columns: 1fr; gap: 0.6rem; }
     .job-left { flex-direction: row; align-items: center; gap: 0.75rem; }
   }
 </style>

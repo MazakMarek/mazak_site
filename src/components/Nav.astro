@@ -9,13 +9,13 @@ const { active } = Astro.props;
   <a href={import.meta.env.BASE_URL} class="nav-logo">
   Home
 </a>
-<!--
-TODO dokoncit nove stranky 
+
 <div class="nav-links">
   <a href={`${base}skusenosti/`} class={`nav-link ${active === "skusenosti" ? "active" : ""}`}>
     Skúsenosti
   </a>
-
+<!--
+TODO dokoncit nove stranky 
   <a href={`${base}znalosti/`} class={`nav-link ${active === "znalosti" ? "active" : ""}`}>
     Znalosti
   </a>
@@ -23,8 +23,9 @@ TODO dokoncit nove stranky
   <a href={`${base}vzdelanie/`} class={`nav-link ${active === "vzdelanie" ? "active" : ""}`}>
     Vzdelanie
   </a>
+  -->
 </div>
--->
+
 </nav>
 
 <style>
@@ -41,7 +42,7 @@ TODO dokoncit nove stranky
     backdrop-filter: blur(8px);
   }
   .nav-logo {
-    font-size: 1.15rem;
+    font-size: 0.7rem;
     font-weight: 600;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -54,7 +55,7 @@ TODO dokoncit nove stranky
   .nav-links { display: flex; gap: 0.25rem; }
 
   .nav-link {
-    font-size: 1.15rem;
+    font-size: 0.7rem;
     color: var(--text-muted);
     text-decoration: none;
     padding: 0.3rem 0.75rem;
