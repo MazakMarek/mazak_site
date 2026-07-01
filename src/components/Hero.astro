@@ -311,6 +311,35 @@ import me from '../../resources/result_ME.jpg';
     font-weight: 700;
   }
 
+  .progress-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-top: 0.4rem;
+}
+
+.progress-track {
+  width: 200px;
+  height: 6px;
+  background: var(--border-muted);
+  border-radius: 2px;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 90%;
+  background: var(--orange);
+  border-radius: 2px;
+}
+
+.progress-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--orange);
+  letter-spacing: 0.06em;
+  flex-shrink: 0;
+}
+
   .chips {
     display: flex;
     flex-wrap: wrap;
@@ -432,43 +461,48 @@ import me from '../../resources/result_ME.jpg';
   }
 
   /* ── RESPONSIVE ── */
-  @media (max-width: 860px) {
-    .hero { grid-template-columns: 1fr; min-height: auto; }
-    .hero-left { border-right: none; border-bottom: 1px solid var(--border-muted); }
-    .name-block { padding: 0 1.5rem 0; gap: 1.25rem; }
-    .name-row { font-size: clamp(2.5rem, 12vw, 5rem); }
-    .avatar { width: 100px; height: 100px; }
-    .hero-right { padding: 1.5rem; }
-    .bio-text { font-size: 0.95rem; }
-    .info-title { font-size: 1.05rem; }
-    .status-pill { margin-left: 0; }
+ @media (max-width: 860px) {
+  .hero {
+    display: block;
+    height: auto;
+    min-height: auto;
   }
-  .progress-bar {
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
-  margin-top: 0.4rem;
-}
 
-.progress-track {
-  width: 200px;
-  height: 6px;
-  background: var(--border-muted);
-  border-radius: 2px;
-}
+  .hero-left {
+    border-right: none;
+    border-bottom: 1px solid var(--border-muted);
+    overflow: visible;
+  }
 
-.progress-fill {
-  height: 100%;
-  width: 90%;
-  background: var(--orange);
-  border-radius: 2px;
-}
+  .hero-right {
+    padding: 1.5rem;
+    overflow-y: visible;
+  }
 
-.progress-label {
-  font-size: 0.65rem;
-  font-weight: 600;
-  color: var(--orange);
-  letter-spacing: 0.06em;
-  flex-shrink: 0;
+  .name-block {
+    padding: 0 1.5rem;
+    gap: 1.25rem;
+  }
+
+  .name-row {
+    font-size: clamp(2.5rem, 12vw, 5rem);
+  }
+
+  .avatar {
+    width: 100px;
+    height: 100px;
+  }
+
+  .bio-text {
+    font-size: 0.95rem;
+  }
+
+  .info-title {
+    font-size: 1.05rem;
+  }
+
+  .status-pill {
+    margin-left: 0;
+  }
 }
 </style>
