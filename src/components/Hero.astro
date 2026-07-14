@@ -19,7 +19,17 @@ import me from '../../resources/result_ME.jpg';
           <span class="n-bright">M</span><span class="n-ghost">azák</span>
         </div>
       </div>
+      
     </div>
+        <div class="bio-block">
+      <p class="bio-text">
+        Som softvérový tester so zameraním na kvalitu a spoľahlivosť aplikácií. Popri testovaní sa venujem aj dátovej analytike, umelej inteligencii (AI).
+        Rád objavujem nové technológie, rozširujem svoje znalosti a získané skúsenosti uplatňujem pri riešení praktických problémov.
+      </p>
+    </div>
+
+    <div class="divider"></div>
+
 
     <div class="stats-card">
       <div class="stats-row">
@@ -42,15 +52,6 @@ import me from '../../resources/result_ME.jpg';
   </div>
 
   <div class="hero-right">
-    <div class="bio-block">
-      <p class="bio-text">
-        Som softvérový tester so zameraním na kvalitu a spoľahlivosť aplikácií.
-        Popri testovaní ma zaujíma aj dátová analytika a práca s dátami.
-        Rád sa učím nové technológie a získané poznatky využívam v praxi.
-      </p>
-    </div>
-
-    <div class="divider"></div>
 
     <div class="info-block">
       <p class="info-label">Aktuálna pozícia</p>
@@ -96,10 +97,6 @@ import me from '../../resources/result_ME.jpg';
         </div>
         <span class="progress-label">90%</span>
       </div>
-
-      <p class="info-title">Bc. Informatika a riadenie </p>
-      <p class="info-thesis">Téma BP: Dátova analytika vo vzdelávaciom procese</p>
-      <p class="info-sub">UNIZA FRI Žilina, 2021 - 2024</p>
     </div>
 
     <div class="divider"></div>
@@ -132,7 +129,21 @@ import me from '../../resources/result_ME.jpg';
       <a href={`${base}vzdelanie/`} class="nav-card">
         Vzdelanie 
       </a>
-    </div> 
+      </div>
+    <div class="looking-for-content">
+      <h2>Čo hľadám</h2>
+      <p>
+        Najviac ma zaujímajú pracovné príležitosti v oblasti 
+        <strong> testovania softvéru</strong>,
+        <strong> dátovej analytiky</strong>,
+        <strong> umelej inteligencie (AI)</strong>
+      </p>
+
+      <p class="subtitle">
+        Ak má pozícia iný názov, ale zahŕňa prácu s dátami, zlepšovanie kvality softvéru,
+        automatizáciu alebo využitie AI technológií, rád sa o nej dozviem.
+      </p>
+    </div>
   </div>
 </section>
 
@@ -151,7 +162,7 @@ import me from '../../resources/result_ME.jpg';
   </div>
   <div class="status-pill">
     <span class="status-dot"></span>
-    Aktívne zamestnaný
+    Otvorený príležitostiam
   </div>
 </div>
 
@@ -510,5 +521,36 @@ import me from '../../resources/result_ME.jpg';
   .status-pill {
     margin-left: 0;
   }
+}
+.looking-for-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.looking-for-content h2 {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.15rem;
+}
+
+.looking-for-content p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.looking-for-content strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.looking-for-content .subtitle {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.6;
 }
 </style>
