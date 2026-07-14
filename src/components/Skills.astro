@@ -19,7 +19,14 @@ const interests = [
   "📚 Čítanie",
 ];
 ---
+<div class="section-head">
+  <h2 class="section-title">Znalosti</h2>
+</div>
 
+<p class="section-note">
+  🚧 Táto sekcia je momentálne vo vývoji. Obsah a technológie priebežne dopĺňam.
+</p>
+<!--
 <section class="section" id="znalosti">
   <div class="section-inner">
     <div class="section-head">
@@ -180,4 +187,29 @@ const interests = [
   @media (max-width: 640px) {
     .content-grid { grid-template-columns: 1fr; gap: 2.5rem; }
   }
+</style>
+-->
+<style>
+.section {
+    border-bottom: 1px solid var(--border-muted);
+    padding: 3.5rem 2.5rem;
+  }
+  .section-inner { max-width: 860px; }
+
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-muted);
+  }
+.section-note {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin: -1.5rem auto 2rem;
+  font-style: italic;
+  text-align: center;
+  width: 100%;
+}
 </style>
