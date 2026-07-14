@@ -14,14 +14,11 @@ const { active } = Astro.props;
   <a href={`${base}skusenosti/`} class={`nav-link ${active === "skusenosti" ? "active" : ""}`}>
     Skúsenosti
   </a>
-<!--
-TODO dokoncit nove stranky 
-  <a href={`${base}znalosti/`} class={`nav-link ${active === "znalosti" ? "active" : ""}`}>
-    Znalosti
-  </a>-->
-
   <a href={`${base}vzdelanie/`} class={`nav-link ${active === "vzdelanie" ? "active" : ""}`}>
     Vzdelanie
+  </a>
+  <a href={`${base}znalosti/`} class={`nav-link ${active === "znalosti" ? "active" : ""}`}>
+    Znalosti
   </a>
 </div>
 
