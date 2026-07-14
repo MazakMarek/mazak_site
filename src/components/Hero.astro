@@ -52,7 +52,20 @@ import me from '../../resources/result_ME.jpg';
   </div>
 
   <div class="hero-right">
+   <div class="looking-for-content">
+      <h2>Čo hľadám</h2>
+      <p>
+        
+        <strong>Software Tester / QA Engineer</strong>,
+        <strong> Data Analyst</strong>,
+        <strong> AI Specialist</strong>
+      </p>
 
+      <p class="subtitle">
+        Ak má pozícia iný názov, ale zahŕňa prácu s dátami, zlepšovanie kvality softvéru,
+        automatizáciu alebo využitie AI technológií, rád sa o nej dozviem.
+      </p>
+    </div>
     <div class="info-block">
       <p class="info-label">Aktuálna pozícia</p>
       <p class="info-title">Automated Software Tester</p>
@@ -130,20 +143,6 @@ import me from '../../resources/result_ME.jpg';
         Vzdelanie 
       </a>
       </div>
-    <div class="looking-for-content">
-      <h2>Čo hľadám</h2>
-      <p>
-        Najviac ma zaujímajú pracovné príležitosti v oblasti 
-        <strong> testovania softvéru</strong>,
-        <strong> dátovej analytiky</strong>,
-        <strong> umelej inteligencie (AI)</strong>
-      </p>
-
-      <p class="subtitle">
-        Ak má pozícia iný názov, ale zahŕňa prácu s dátami, zlepšovanie kvality softvéru,
-        automatizáciu alebo využitie AI technológií, rád sa o nej dozviem.
-      </p>
-    </div>
   </div>
 </section>
 
@@ -183,7 +182,7 @@ import me from '../../resources/result_ME.jpg';
     flex-direction: column;
     justify-content: space-between;
     overflow: hidden;
-  }
+}
 
   .name-block {
     padding: 0 2rem 0 2rem;
@@ -283,12 +282,33 @@ import me from '../../resources/result_ME.jpg';
     overflow-y: auto;
   }
 
-  .bio-text {
-    font-size: 0.8rem;
-    color: var(--text-secondary);
-    line-height: 1.7;
-    font-weight: 400;
-  }
+  .bio-block {
+  padding: 1.5rem 2.5rem;
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.bio-text {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+.bio-text strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.bio-tag {
+  margin-top: 1rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+}
 
   .divider {
     height: 1px;
@@ -511,7 +531,7 @@ import me from '../../resources/result_ME.jpg';
   }
 
   .bio-text {
-    font-size: 0.95rem;
+    font-size: 0.25rem;
   }
 
   .info-title {
