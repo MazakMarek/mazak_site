@@ -1,187 +1,161 @@
----
-const university = [
-  {
-    degree: "Gymnázium Šrobárova 1",
-    field: null,
-    school: "Košice, SR",
-    period: "2017 – 2021",
-    current: false,
-    thesis: null,
-    focus: null,
-  },
-  {
-    degree: "Bakalárske štúdium — Bc.",
-    field: "Informatika a riadenie",
-    school: "Žilinská univerzita — FRI",
-    period: "2021 – 2024",
-    current: false,
-    thesis: "Dátová analytika vo vzdelávacom procese",
-    focus: null,
-  },
-  {
-    degree: "Inžinierské štúdium — Ing.",
-    field: "Informačný manažment",
-    school: "Žilinská univerzita — FRI",
-    period: "2024 – súčasnosť",
-    current: true,
-    thesis: null,
-    focus: "",   // doplniť zameranie
-  },
-];
-
-// Každý pobyt: krajina, univerzita, semester, čo si študoval, čo ti priniesol
-const erasmusStays = [
-  // { country: "", university: "", semester: "", subject: "", takeaway: "" }
-];
-
-// Každý BIP: kde, téma, trvanie, čo si robil
-const bip = [
-  {
-    location: "",           // doplniť
-    topic: "Medzinárodné tímy, digitálne zručnosti, agilná spolupráca",
-    duration: "",           // doplniť
-    role: "",               // doplniť
-  },
-];
-
-// Kurzy: názov + krátky popis
-const courses = [
-  { name: "Python",          desc: "" },
-  { name: "SQL",             desc: "" },
-  { name: "Data Analytics",  desc: "" },
-  { name: "Testing",         desc: "" },
-  { name: "Git",             desc: "" },
-];
-
-// Certifikáty: názov, organizácia, dátum, stručný popis
-const certificates = [
-  // { name: "", org: "", date: "", desc: "" }
-];
----
-
 <div class="page">
 
-  <!-- COL 1 — Univerzita -->
+  <!-- COL 1 — Vzdelanie -->
   <div class="col col-uni">
     <div class="section-head">
-      <p class="section-label">01</p>
       <h2 class="section-title">Vzdelanie</h2>
     </div>
 
     <div class="edu-list">
-      {university.map((u) => (
-        <div class={`edu-row ${u.current ? "edu-row--current" : ""}`}>
-          <div class="edu-left">
-            <span class={`edu-dot ${u.current ? "edu-dot--current" : ""}`}></span>
-            <span class="edu-period">{u.period}</span>
-          </div>
-          <div class="edu-right">
-            <div class="edu-header">
-              <h3 class="edu-degree">{u.degree}</h3>
-              {u.current && <span class="edu-badge">Prebieha</span>}
-            </div>
-            {u.field && <p class="edu-field">{u.field}</p>}
-            <p class="edu-school">{u.school}</p>
-            {u.thesis && (
-              <p class="edu-note">📄 {u.thesis}</p>
-            )}
-            {u.focus && (
-              <p class="edu-note">🎯 {u.focus}</p>
-            )}
-          </div>
+
+      <div class="edu-row edu-row--current">
+        <div class="edu-left">
+          <span class="edu-dot edu-dot--current"></span>
+          <span class="edu-period">2024 – súčasnosť</span>
         </div>
-      ))}
+        <div class="edu-right">
+          <div class="edu-header">
+            <h3 class="edu-degree">Ing. Inžinierské štúdium</h3>
+            <span class="edu-badge">Prebieha</span>
+          </div>
+          <p class="edu-field">Informačný manažment</p>
+          <p class="edu-school">Fakulta riadenia a informatiky, Žilinská univerzita</p>
+        </div>
+      </div>
+
+      <div class="edu-row">
+        <div class="edu-left">
+          <span class="edu-dot"></span>
+          <span class="edu-period">2021 – 2024</span>
+        </div>
+        <div class="edu-right">
+          <div class="edu-header">
+            <h3 class="edu-degree">Bc. Bakalárske štúdium</h3>
+          </div>
+          <p class="edu-field">Informatika a riadenie</p>
+          <p class="edu-school">Fakulta riadenia a informatiky, Žilinská univerzita</p>
+          <p class="edu-note">Téma BP ->  Dátová analytika vo vzdelávacom procese</p>
+        </div>
+      </div>
+
+      <div class="edu-row">
+        <div class="edu-left">
+          <span class="edu-dot"></span>
+          <span class="edu-period">2017 – 2021</span>
+        </div>
+        <div class="edu-right">
+          <div class="edu-header">
+            <h3 class="edu-degree">Gymnázium Šrobárova 1</h3>
+          </div>
+          <p class="edu-school">Košice, SR</p>
+        </div>
+      </div>
+
     </div>
   </div>
 
   <!-- COL 2 — Erasmus+ -->
   <div class="col col-erasmus">
     <div class="section-head">
-      <p class="section-label">02</p>
       <h2 class="section-title">Erasmus+</h2>
     </div>
 
-    <p class="sub-label">Pobyty</p>
-    <div class="stays-list">
-      {erasmusStays.length === 0 ? (
-        <p class="empty-note">Doplniť neskôr</p>
-      ) : (
-        erasmusStays.map((s) => (
-          <div class="stay-card">
-            <div class="stay-header">
-              <span class="stay-country">{s.country}</span>
-              <span class="stay-semester">{s.semester}</span>
-            </div>
-            <p class="stay-uni">{s.university}</p>
-            {s.subject && <p class="stay-field">📚 {s.subject}</p>}
-            {s.takeaway && <p class="stay-takeaway">💡 {s.takeaway}</p>}
-          </div>
-        ))
-      )}
-    </div>
+    <div class="era-list">
 
-    <p class="sub-label" style="margin-top: 1.5rem;">Blended Intensive Programme</p>
-    {bip.map((b) => (
-      <div class="bip-card">
-        <div class="bip-row">
-          <span class="bip-key">Miesto</span>
-          <span class="bip-val">{b.location || "—"}</span>
+      <div class="era-entry">
+        <div class="era-head">
+          <div>
+            <h3 class="era-country">Chorvátsko — Šibenik</h3>
+            <p class="era-uni">Veleučilište u Šibeniku</p>
+          </div>
+          <div class="era-aside">
+            <span class="era-period">mar – júl 2026</span>
+          </div>
         </div>
-        <div class="bip-row">
-          <span class="bip-key">Téma</span>
-          <span class="bip-val">{b.topic || "—"}</span>
+        <div class="era-tags">
+          <span class="era-tag">Business Information Systems</span>
+          <span class="era-tag">Databázové systémy</span>
+          <span class="era-tag">Dátová analýza (R)</span>
+          <span class="era-tag">Google automatizácia</span>
         </div>
-        <div class="bip-row">
-          <span class="bip-key">Trvanie</span>
-          <span class="bip-val">{b.duration || "—"}</span>
+        <p class="era-takeaway">Zameranie na informačné systémy, dátovú analytiku a databázy doplnené o tímové projekty s medzinárodnými študentmi.</p>
+      </div>
+
+      <div class="era-entry">
+        <div class="era-head">
+          <div>
+            <h3 class="era-country">Fínsko — Vantaa</h3>
+            <p class="era-uni">Laurea University of Applied Sciences</p>
+          </div>
+          <div class="era-aside">
+            <span class="era-period">jan – máj 2024</span>
+          </div>
         </div>
-        <div class="bip-row">
-          <span class="bip-key">Rola</span>
-          <span class="bip-val">{b.role || "—"}</span>
+        <div class="era-tags">
+          <span class="era-tag">Softvérové testovaie</span>
+          <span class="era-tag">Data-Driven Decision Making</span>
+          <span class="era-tag">Digitálny marketing</span>
+        </div>
+        <p class="era-takeaway">Projektovo orientovaná výučba zameraná na softvérové testovanie, rozhodovanie na základe dát a spoluprácu v medzinárodných tímoch.</p>
+      </div>
+
+      <div class="bip-note">
+        <span class="bip-label">BIP</span>
+        <div class="bip-content">
+          <p class="bip-where">České Budějovice</p>
+          <p class="bip-what">Vysoká škola technická a ekonomická v Českých Budějovicích</p>
+          <p class="bip-what">Rozvoj soft skills v medzinárodnom prostredí</p>
         </div>
       </div>
-    ))}
+
+    </div>
   </div>
 
-  <!-- COL 3 — Kurzy + Certifikáty -->
+   <!--COL 3 — Kurzy + Certifikáty--> 
   <div class="col col-right">
 
-    <div class="right-block">
+    <!--<div class="right-block">
       <div class="section-head">
-        <p class="section-label">03</p>
         <h2 class="section-title">Kurzy</h2>
       </div>
       <ul class="course-list">
-        {courses.map((c) => (
-          <li class="course-item">
-            <span class="course-name">{c.name}</span>
-            {c.desc && <span class="course-desc">{c.desc}</span>}
-          </li>
-        ))}
+        <li class="course-item">
+          <span class="course-name">Python</span>
+        </li>
+        <li class="course-item">
+          <span class="course-name">SQL</span>
+        </li>
+        <li class="course-item">
+          <span class="course-name">Data Analytics</span>
+        </li>
+        <li class="course-item">
+          <span class="course-name">Testing</span>
+        </li>
+        <li class="course-item">
+          <span class="course-name">Git</span>
+        </li>
       </ul>
-    </div>
+    </div>-->
 
     <div class="right-block">
       <div class="section-head">
-        <p class="section-label">04</p>
         <h2 class="section-title">Certifikáty</h2>
       </div>
-      {certificates.length === 0 ? (
-        <p class="empty-note">Doplniť neskôr</p>
-      ) : (
-        <ul class="cert-list">
-          {certificates.map((c) => (
-            <li class="cert-item">
-              <div class="cert-header">
-                <span class="cert-name">{c.name}</span>
-                <span class="cert-date">{c.date}</span>
-              </div>
-              <p class="cert-org">{c.org}</p>
-              {c.desc && <p class="cert-desc">{c.desc}</p>}
-            </li>
-          ))}
-        </ul>
-      )}
+      <!-- Príklad certifikátu s Credly linkom:-->
+      <ul class="cert-list">
+        <li class="cert-item">
+          <div class="cert-header">
+            <span class="cert-name">Názov certifikátu</span>
+            <span class="cert-date">2024</span>
+          </div>
+          <p class="cert-org">Organizácia</p>
+          <p class="cert-desc">Krátky popis.</p>
+          <a href="https://www.credly.com/badges/..." target="_blank" rel="noopener" class="cert-credly">
+            Zobraziť na Credly ↗
+          </a>
+        </li>
+      </ul>
+      
     </div>
 
   </div>
@@ -203,7 +177,6 @@ const certificates = [
   }
   .col:last-child { border-right: none; }
 
-  /* Col 3 is flex-col so Kurzy + Certifikáty stack inside */
   .col-right {
     display: flex;
     flex-direction: column;
@@ -217,7 +190,7 @@ const certificates = [
   }
   .right-block:last-child { border-bottom: none; }
 
-  /* ── Section / sub headings ── */
+  /* ── Section headings ── */
   .section-head {
     display: flex;
     align-items: baseline;
@@ -226,26 +199,11 @@ const certificates = [
     padding-bottom: 1rem;
     border-bottom: 1px solid var(--border-muted);
   }
-  .section-label {
-    font-size: 0.65rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    color: var(--text-muted);
-    font-family: var(--font-body);
-  }
   .section-title {
     font-family: var(--font-display);
     font-size: 1.35rem;
     font-weight: 700;
     color: var(--text-primary);
-  }
-  .sub-label {
-    font-size: 0.63rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    margin-bottom: 0.75rem;
   }
 
   /* ── University rows ── */
@@ -317,7 +275,6 @@ const certificates = [
   }
   .edu-note {
     font-size: 0.7rem;
-    color: var(--text-muted);
     background: var(--bg-elevated);
     border: 1px solid var(--border-muted);
     padding: 0.2rem 0.55rem;
@@ -327,71 +284,138 @@ const certificates = [
     line-height: 1.45;
   }
 
-  /* ── Erasmus stays ── */
-  .stays-list { display: flex; flex-direction: column; gap: 0.75rem; }
-
-  .stay-card {
-    padding: 0.9rem 1rem;
-    border: 1px solid var(--border-muted);
-    border-radius: 6px;
-    background: var(--bg-elevated);
+  /* ── Erasmus ── */
+  .era-list {
+    display: flex;
+    flex-direction: column;
   }
-  .stay-header {
+
+  .era-entry {
+    position: relative;
+    padding: 0.2rem 0 1.5rem 1.25rem;
+    border-left: 2px solid var(--border-muted);
+  }
+  .era-entry--current { border-left-color: var(--orange); }
+
+  .era-entry::before {
+    content: '';
+    position: absolute;
+    left: -5px; top: 0.3rem;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--border);
+    border: 2px solid var(--bg);
+    box-sizing: border-box;
+  }
+  .era-entry--current::before {
+    background: var(--orange);
+    box-shadow: 0 0 8px rgba(240,136,62,0.4);
+  }
+
+  .era-head {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 0.2rem;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 0.6rem;
   }
-  .stay-country {
-    font-size: 0.85rem;
+  .era-country {
+    font-size: 0.88rem;
     font-weight: 600;
     color: var(--text-primary);
+    margin-bottom: 0.15rem;
   }
-  .stay-semester {
-    font-size: 0.68rem;
+  .era-uni {
+    font-size: 0.7rem;
     color: var(--text-muted);
+    line-height: 1.4;
   }
-  .stay-uni {
-    font-size: 0.75rem;
-    color: var(--text-secondary);
-    margin-bottom: 0.35rem;
+  .era-aside {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.3rem;
+    flex-shrink: 0;
   }
-  .stay-field,
-  .stay-takeaway {
-    font-size: 0.72rem;
-    color: var(--text-muted);
-    line-height: 1.45;
-    margin-top: 0.2rem;
-  }
-
-  /* ── BIP card ── */
-  .bip-card {
-    border: 1px solid var(--border-muted);
-    border-left: 2px solid var(--orange);
-    border-radius: 6px;
-    background: var(--bg-elevated);
-    overflow: hidden;
-  }
-  .bip-row {
-    display: grid;
-    grid-template-columns: 70px 1fr;
-    gap: 0.75rem;
-    padding: 0.5rem 0.9rem;
-    border-bottom: 1px solid var(--border-muted);
-    align-items: baseline;
-  }
-  .bip-row:last-child { border-bottom: none; }
-  .bip-key {
-    font-size: 0.63rem;
+  .era-badge {
+    font-size: 0.6rem;
     font-weight: 600;
     letter-spacing: 0.06em;
-    color: var(--text-muted);
-    text-transform: uppercase;
+    color: var(--orange);
+    background: rgba(240,136,62,0.1);
+    border: 1px solid rgba(240,136,62,0.25);
+    padding: 0.12rem 0.45rem;
+    border-radius: 4px;
   }
-  .bip-val {
-    font-size: 0.75rem;
+  .era-period {
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
+
+  .era-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    margin-bottom: 0.6rem;
+  }
+  .era-tag {
+    display: inline-block;
+    font-size: 0.62rem;
+    color: var(--blue);
+    background: var(--blue-dim);
+    border: 1px solid rgba(88,166,255,0.2);
+    padding: 0.12rem 0.45rem;
+    border-radius: 4px;
+    line-height: 1.5;
+  }
+
+  .era-takeaway {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    font-style: italic;
+    margin: 0;
+  }
+
+  /* ── BIP ── */
+  .bip-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+    padding: 0.65rem 0.85rem;
+    border: 1px dashed var(--border-muted);
+    border-radius: 6px;
+    margin-top: 0.5rem;
+  }
+  .bip-label {
+    font-size: 0.55rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-muted);
+    padding: 0.12rem 0.4rem;
+    border-radius: 3px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+  .bip-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+  .bip-where {
+    font-size: 0.72rem;
+    font-weight: 600;
     color: var(--text-secondary);
+    margin: 0;
+  }
+  .bip-what {
+    font-size: 0.68rem;
+    color: var(--text-muted);
     line-height: 1.45;
+    margin: 0;
   }
 
   /* ── Courses ── */
@@ -399,7 +423,6 @@ const certificates = [
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 0;
   }
   .course-item {
     display: flex;
@@ -457,7 +480,19 @@ const certificates = [
     font-size: 0.7rem;
     color: var(--text-muted);
     line-height: 1.45;
+    margin-bottom: 0.5rem;
   }
+  .cert-credly {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.68rem;
+    font-weight: 500;
+    color: var(--blue);
+    text-decoration: none;
+    transition: opacity 0.15s;
+  }
+  .cert-credly:hover { opacity: 0.75; }
 
   /* ── Empty state ── */
   .empty-note {
@@ -466,7 +501,7 @@ const certificates = [
     font-style: italic;
   }
 
-  /* ── Mobile: single column, scrollable ── */
+  /* ── Mobile ── */
   @media (max-width: 900px) {
     .page {
       grid-template-columns: 1fr;
